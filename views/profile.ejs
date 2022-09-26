@@ -1,0 +1,38 @@
+<%- include('partials/header') -%>
+This is profile page
+
+<div>
+
+    <div class="userInfo">
+        <p>User Name: <%= user.userName %></p>
+        <p>Email: <%= user.email %></p>
+    </div>
+        <% for (let i = 0; i < tranx.length; i++) { %>
+            <div class="transaction">
+                <h3><%= tranx[i].subject %></h3>
+                <span><%= tranx[i].price %></span>
+                <span><%= tranx[i].typeOf %></span>
+                <a href="/tranx/<%= tranx[i].id%>">
+                    <img class="listingImages" src="<%=tranx[i].image%>" alt="">
+                </a>
+                
+                
+                <form action="/listing/addBookmark/<%= tranx[i].id%>?_method=PUT" method="POST">
+                    <button type="submit"><i class="fa-solid fa-bookmark"></i></button>
+                </form>
+          
+                <form action="/listing/deleteListing/<%=tranx[i].id%>?_method=DELETE" method="POST">
+                    <button type="submit"><i class="fa-solid fa-trash"></i></button>
+                </form>
+
+                
+
+            </div>
+            
+        <% } %>
+
+        
+    
+
+
+</div>

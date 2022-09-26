@@ -1,0 +1,16 @@
+<%- include('partials/header') -%>
+All buying requests
+
+<div class="container">
+    <% for (let element of tranx) { %>
+        <a href="/listing/getListing/<%=element.id%>">
+            <img src="<%=element.image%>" alt="">
+        </a>
+        <form action="/listing/addBookmark/<%= element.id%>?_method=PUT" method="POST">
+            <button type="submit"><i class="fa-solid fa-bookmark"></i></button>
+        </form>
+    
+    <% } %>
+
+
+</div>

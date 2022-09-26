@@ -10,12 +10,13 @@ const methodOverride = require("method-override");
 
 PORT = 5555;
 const mainRoute = require("./routes/main")
+const listingRoute = require("./routes/listing")
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
 
 // Serves up our static assets
-app.use(express.static("public"));
+app.use(express.static('public'));
 
 // Passport config
 require("./config/passport")(passport);
@@ -47,18 +48,14 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Serves up our static assets
-app.use(express.static("public"));
-
 
 //Use flash messages for errors, info, ect...
 app.use(flash());
 
 
 
-
 app.use("/", mainRoute)
-
+app.use("/listing", listingRoute)
 
 app.listen(PORT, () =>{
     console.log(`We are live on port ${PORT}`)

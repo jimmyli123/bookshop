@@ -1,0 +1,39 @@
+
+<%- include('partials/header')-%>
+
+<h2 class="page__title">Create Listing</h2>
+
+<form action="/listing/createListing" enctype="multipart/form-data" method="POST">
+  <div class="inputForm">
+    <label class="form-label" for="subject">Subject</label>
+    <input type="text" class="form-control" id="subject" name="subject">
+    <label class="form-label" for="price">Price</label>
+    <input type="text" class="form-control" id="price" name="price">
+
+    <select class="form-control" name="typeOf" aria-label="Type">
+        <option selected>Type of transaction</option>
+        <option value="buying">Buying</option>
+        <option value="selling">Selling</option>
+        <option value="giving">Giving Away</option>
+      </select>
+
+      <div class="input-group input-group-lg mb-5">
+        <span class="input-group-text">Details</span>
+        <textarea class="form-control" aria-label="With textarea" name="details"></textarea>
+      </div>
+      <div class="container">
+        <label for="imgUpload" class="form-label">Image</label>
+      <input type="file"  id="imageUpload" name="uploadedImages" multiple="multiple" title="Add images">
+      </div>
+      <div class="preview__images">
+
+      </div>
+      
+  
+
+    <button class="btn btn-secondary" type="submit" value="Upload">Submit</button>
+  </div>
+    
+</form>
+
+<%- include('partials/footer') -%>

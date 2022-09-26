@@ -2,3 +2,85 @@
     box-sizing: border-box;
 }
 
+img { 
+    width: 250px;
+}
+
+/* Header styling */
+.header {
+    display: flex;
+    padding-left: 15%;
+    width: 100%;
+    justify-content: space-between;
+}
+.header a {
+    text-decoration: none;
+    color: black;
+    padding: 0 .3rem;
+    margin: 1px 1px;
+}
+.header a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.header__right {
+    margin-right: 3rem;
+}
+
+/* Main content styling */
+
+.page__title {
+    text-align: center;
+    margin: 5% 0;
+}
+.midContent { 
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.item {
+    display: flex;
+    text-align: center;
+}
+.item__right {
+    display: flex;
+    align-items: center;
+
+}
+
+
+
+/* Create Listing Styling */
+
+.inputForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 75%;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.btn {
+    margin-top: 25px;
+}
+    
+input[type='file'] {
+    color: rgba(0,0,0,0)
+}
+
+
+/* Footer styling */
+.footer {
+    width: 100%;
+    position: fixed;
+    bottom: 15px;
+    
+}
+.footer > h5 {
+    display: block;
+    text-align: center;
+}

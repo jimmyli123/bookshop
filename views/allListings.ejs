@@ -1,0 +1,31 @@
+<%- include('partials/header') -%>
+<h2>All Listings</h2>
+<div class="container">
+    <% for(let element of tranx) { %>
+        <div class="midContent">
+            <div class="item">
+                <div class="item__left">
+                    <h3><%=element.subject %></h3>
+                    <a href="/listing/getListing/<%=element.id%>">
+                    <img class="itemImage" src="<%=element.image%>" alt="">
+                    </a>
+                    <div class="details">
+                    
+                    </div>
+                </div>
+                <div class="item__right">
+                    <span><%=element.price%></span>
+                    <!-- <p><%=element.details%></p> -->
+                    <form action="/listing/addBookmark/<%= element.id%>?_method=PUT" method="POST">
+                        <button type="submit"><i class="fa-solid fa-bookmark"></i></button>
+                    </form>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+    <% } %>
+
+</div>
