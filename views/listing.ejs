@@ -2,7 +2,10 @@
 <div>
     <h2>
         <%= tranx.subject %>
-        <img src="<%= tranx.image %>" alt="">
+        <% for (let element of tranx.image) { %>
+            <img src="<%= element %>" alt="">
+        <% } %>
+        
     </h2>
 
 </div>

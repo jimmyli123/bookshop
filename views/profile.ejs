@@ -7,32 +7,38 @@ This is profile page
         <p>User Name: <%= user.userName %></p>
         <p>Email: <%= user.email %></p>
     </div>
-        <% for (let i = 0; i < tranx.length; i++) { %>
-            <div class="transaction">
-                <h3><%= tranx[i].subject %></h3>
-                <span><%= tranx[i].price %></span>
-                <span><%= tranx[i].typeOf %></span>
-                <a href="/tranx/<%= tranx[i].id%>">
-                    <img class="listingImages" src="<%=tranx[i].image%>" alt="">
-                </a>
-                
-                
-                <form action="/listing/addBookmark/<%= tranx[i].id%>?_method=PUT" method="POST">
-                    <button type="submit"><i class="fa-solid fa-bookmark"></i></button>
-                </form>
-          
-                <form action="/listing/deleteListing/<%=tranx[i].id%>?_method=DELETE" method="POST">
+</div>
+<div class="container">
+    <% for(let element of tranx) { %>
+        <div class="midContent">
+            <div class="item">
+                <div class="item__left">
+                    <h3><%=element.subject %></h3>
+                    <a href="/listing/getListing/<%=element.id%>">
+                    <img class="itemImage" src="<%=element.image[0]%>" alt="">
+                    </a>
+                    <div class="details">
+                    
+                    </div>
+                </div>
+                <div class="item__right">
+                    <span><%=element.price%></span>
+                    <!-- <p><%=element.details%></p> -->
+                    <form action="/listing/addBookmark/<%= element.id%>?_method=PUT" method="POST">
+                        <button type="submit"><i class="fa-solid fa-bookmark"></i></button>
+                    </form>
+                    <form action="/listing/deleteListing/<%=element.id%>?_method=DELETE" method="POST">
                     <button type="submit"><i class="fa-solid fa-trash"></i></button>
                 </form>
-
+                </div>
                 
-
+                
             </div>
-            
-        <% } %>
-
+        </div>
         
-    
-
+        
+    <% } %>
 
 </div>
+
+
