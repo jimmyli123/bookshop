@@ -1,6 +1,10 @@
 * {
     box-sizing: border-box;
 }
+body {
+    --condition-color: gray;
+}
+
 
 img { 
     width: 250px;
@@ -12,6 +16,7 @@ img {
     padding-left: 15%;
     width: 100%;
     justify-content: space-between;
+    
 }
 .header a {
     text-decoration: none;
@@ -42,16 +47,55 @@ img {
     margin: 0 auto;
 }
 
+.item__top {
+    display: block;
+    height: 350px;
+}
+
+.item__title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    font-size: 1.1rem;
+    padding-top: .5rem;
+}
+.condition {
+    /* font-size: 1rem; */
+    color: var(--condition-color);
+    font-weight: 200;
+    /* font-style: italic; */
+}
 .item {
     display: flex;
+    flex-direction: column;
     text-align: center;
+    border: solid lightgray 1px;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
 }
-.item__right {
+.item__outside {
+    padding: 15px;
+}
+
+.item__subject {
+    font-weight: bold;
+}
+.item__price {
+    font-weight: bold;
+}
+
+.details {
+    padding-top:10px;
     display: flex;
-    align-items: center;
-
+    flex-direction: column;
+    align-items: flex-start;
 }
 
+.bookmark__icon {
+    display: flex;
+    align-self: flex-end;
+}
 
 
 /* Create Listing Styling */
