@@ -3,12 +3,46 @@
 }
 body {
     --condition-color: gray;
+    
 }
 
 
 img { 
     width: 250px;
 }
+
+/* Home Page Styling */
+
+.login {
+    font-family: 'Roboto',sans-serif;
+}
+#login__link { 
+    margin-right: 10px;
+}
+.homepage__outside {
+    margin: 5% 10%;
+    display: flex;
+}
+.homepage__inside {
+    padding: 10px;
+}
+.homepage__auth {
+    float:right;
+    
+}
+.homepage__auth > a{
+    text-decoration: none;
+    color: brown;
+}
+
+#library {
+    display: block;
+    width: 400px;
+    opacity: .9;
+    border-radius: 2px;
+    
+}
+
 
 /* Header styling */
 .header {

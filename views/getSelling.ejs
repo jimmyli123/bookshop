@@ -2,15 +2,45 @@
 All selling requests
 
 <div class="container">
-    <% for (let element of tranx) { %>
-        <a href="/listing/getListing/<%=element.id%>">
-            <img src="<%=element.image%>" alt="">
-        </a>
-        <form action="/listing/addBookmark/<%= element.id%>?_method=PUT" method="POST">
-            <button type="submit"><i class="fa-solid fa-bookmark"></i></button>
-        </form>
+    <div class="midContent">
+        <% for(let element of tranx) { %>
+        <div class="item">
+            <div class="item__outside">
+                <div class="item__top">
+                    <a class="item__image" href="/listing/getListing/<%=element.id%>">
+                        <img class="itemImage" src="<%=element.image[0]%>" alt="">
+                        </a>
+                </div>
+                <hr>
+                <div class="item__bottom">
+                    <div class="item__title">
+                        <span class="item__subject"><%=element.subject %></span>
+                        <span class="condition">Condition</span>
+                    </div>
+                    
+                    <div class="details">
+                        <span class="item__price">Price: <%=element.price%></span>
+
+                        <form class ="bookmark__icon" action="/listing/addBookmark/<%= element.id%>?_method=PUT" method="POST">
+                            <button type="submit"><i class="fa-solid fa-bookmark"></i></button>
+                        </form>
+                    </div>
+
+                </div>
+                
+            </div>
+            <div class="item__right">
+                
+                <!-- <p><%=element.details%></p> -->
+                
+            </div>
+            
+            
+        </div>
+        <% } %>
+    </div>
     
-    <% } %>
+    
 
 
 </div>

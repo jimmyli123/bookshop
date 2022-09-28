@@ -15,6 +15,7 @@ const TransactionSchema = new mongoose.Schema({
     },
     typeOf: {
       type: String,
+      enum: ['buying','selling','giving'],
       required: true
     },
     image: {
@@ -24,10 +25,6 @@ const TransactionSchema = new mongoose.Schema({
     cloudinaryId: {
         type: [String],
         required: false,
-    },
-    bookmarked: {
-        type: Number,
-        required: true,
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,

@@ -13,11 +13,9 @@ module.exports = {
           console.log(err);
         }
       },
-
     getCreatePage: async (req,res) => {
       res.render('createListing.ejs')
     },
-
     createListing: async (req, res) => {
       try {
         // console.log(req)
@@ -37,14 +35,13 @@ module.exports = {
 
         await Transaction.create( {
           subject: req.body.subject,
-          price: req.body.price,
+          price: req.body.price || '0',
           details: req.body.details,
           // image: result.secure_url,
           // cloudinaryId: result.public_id,
           image: imgUrls,
           cloudinaryId: cloudinaryIds,
           typeOf: req.body.typeOf,
-          bookmarked: 0,
           user: req.user.id
         })
         res.redirect("/profile")
@@ -65,7 +62,6 @@ module.exports = {
       }
       
     },
-
     getBuying: async(req,res) => {
       try {
         const result = await Transaction.find({typeOf: 'buying'})
@@ -126,7 +122,6 @@ module.exports = {
     },
     addBookmark: async(req,res) => {
       try {
-        console.log(req.user)
         let currentUser = await User.findById({_id: req.user.id})
 
         if (currentUser.myBookmarks.indexOf(req.params.id)!== -1) {
@@ -141,11 +136,23 @@ module.exports = {
           })
           console.log('Bookmark added')
         }
-        
-
-        
       } catch(err) {
         console.log(`Error happened at addBookmark: ${err}`)
+      }
+    },
+    getBookmarks: async(req,res) => {
+      try {
+        const arrayOfMyBookmarks = req.user.myBookmarks;
+        const transactions = await Transaction.find({
+          '_id': { $in: arrayOfMyBookmarks} 
+        })
+
+        res.render("getBookmarks.ejs", {
+          tranx: transactions
+        })
+      }
+      catch(err) {
+        console.log(`Error at getBookmarks: ${err}`)
       }
     }
 
