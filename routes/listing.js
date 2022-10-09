@@ -12,6 +12,7 @@ router.get("/getBuying", bookshopController.getBuying);
 router.get("/getSelling", bookshopController.getSelling);
 router.get("/getFree", bookshopController.getFree);
 router.get("/getListing/:id", bookshopController.getListing);
+router.get("/getUserListings/:id", bookshopController.getUserListings);
 router.get("/getBookmarks", bookshopController.getBookmarks);
 router.put("/addBookmark/:id", bookshopController.addBookmark);
 router.post("/createListing", upload.array('uploadedImages', 5), bookshopController.createListing);

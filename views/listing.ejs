@@ -1,10 +1,24 @@
 <%- include('partials/header') -%>
 <div>
     <h2>
-        <%= tranx.subject %>
-        <% for (let element of tranx.image) { %>
-            <img src="<%= element %>" alt="">
-        <% } %>
+        <div class="getListing__container">
+            <div class="images">
+                <% for (let element of tranx.image) { %>
+                    <img src="<%= element %>" alt="">
+                <% } %>
+            </div>
+            <div class="getListing__container__mid">
+                <%= tranx.subject %>
+                <%= tranx.price %>
+            </div>
+            <div class="sellerInfo">
+                <h3>Seller information</h3>
+                <a href="/listing/getUserListings/<%=pageOwner.id%>"><%= pageOwner.userName %></a>
+                <span>Contact seller</span>
+                <span>See other items</span>
+            </div>
+        </div>
+        
         
     </h2>
 

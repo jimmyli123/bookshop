@@ -77,14 +77,29 @@ module.exports = {
     getListing: async(req,res) => {
       try {
         const result = await Transaction.findById(req.params.id)
+        const pageOwner = await User.findById(result.user)
+        
         res.render("listing.ejs", {
           tranx: result,
-          user: req.user
+          user: req.user,
+          pageOwner
         })
       } catch(err) {
         console.log(`Error happened at GetList: ${err}`)
       }
     },
+    getUserListings: async(req,res) => {
+      try {
+        const result = await Transaction.find({_id: req.params.id})
+        console.log(result)
+        res.render("getUserListings.ejs", {
+          tranx: result
+        })
+      } catch(err) {
+        console.log(`Error happened at getUserListing: ${err}`)
+      }
+    },
+
     getAllListing: async (req,res)=> {
       try {
         const result = await Transaction.find()

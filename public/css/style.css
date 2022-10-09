@@ -45,18 +45,28 @@ img {
 
 
 /* Header styling */
+
 .header {
     display: flex;
-    padding-left: 15%;
+    padding-left: 5%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     width: 100%;
     justify-content: space-between;
-    
+    align-items: center;
 }
+.main__logo { 
+    display: flex;
+    justify-content: space-between;
+}
+
 .header a {
     text-decoration: none;
     color: black;
     padding: 0 .3rem;
     margin: 1px 1px;
+    align-items: center;
+    flex-wrap: nowrap;
 }
 .header a:hover {
     color: blue;
@@ -64,7 +74,47 @@ img {
 }
 
 .header__right {
+    display: block;
     margin-right: 3rem;
+}
+
+.book__icon {
+    margin: auto 0;
+    color: #00D1B2;
+}
+
+/* Header Icons */
+
+.profile__icon {
+    color: #FFD257;
+}
+.globe__icon { 
+    color: #F14668;
+}
+.shopping__icon {
+    color: #4960C7;
+}
+.dollar__icon {
+    color: #E93FA5;
+}
+.coins__icon { 
+    color: #63CF9E;
+}
+.fa-bookmark { 
+    color: #F7CAC9;
+}
+.logout__icon { 
+   color: #955251;
+}
+/* .add__icon {
+    color: 
+} */
+/* Profile header */
+
+.user__header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 /* Main content styling */
@@ -131,6 +181,20 @@ img {
     align-self: flex-end;
 }
 
+/* Get Listing Styling */
+
+.getListing__container { 
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+.getListing__container__mid { 
+    margin: 0 15px;
+}
+.sellerInfo {
+    display: flex;
+    flex-direction: column;
+}
 
 /* Create Listing Styling */
 
@@ -161,4 +225,12 @@ input[type='file'] {
 .footer > h5 {
     display: block;
     text-align: center;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width:1060px) {
+    .header {
+        font-size: 12px;
+    }
 }
