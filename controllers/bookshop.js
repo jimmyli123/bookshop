@@ -90,10 +90,12 @@ module.exports = {
     },
     getUserListings: async(req,res) => {
       try {
-        const result = await Transaction.find({_id: req.params.id})
+        const result = await Transaction.find({user: req.params.id})
+        const pageOwner = await User.findById(req.params.id)
         console.log(result)
         res.render("getUserListings.ejs", {
-          tranx: result
+          tranx: result,
+          pageOwner
         })
       } catch(err) {
         console.log(`Error happened at getUserListing: ${err}`)

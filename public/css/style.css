@@ -3,7 +3,7 @@
 }
 body {
     --condition-color: gray;
-    
+    --border-color: solid lightgray 1px;
 }
 
 
@@ -154,7 +154,7 @@ img {
     display: flex;
     flex-direction: column;
     text-align: center;
-    border: solid lightgray 1px;
+    border: var(--border-color);
     padding: 10px;
     font-family: 'Poppins', sans-serif;
 }
@@ -181,19 +181,25 @@ img {
     align-self: flex-end;
 }
 
-/* Get Listing Styling */
+/* Get User Listing Styling */
 
 .getListing__container { 
     display: flex;
     justify-content: center;
     margin-top: 3rem;
+    
 }
 .getListing__container__mid { 
     margin: 0 15px;
 }
+
 .sellerInfo {
     display: flex;
     flex-direction: column;
+}
+
+.listing__item {
+    display: 
 }
 
 /* Create Listing Styling */
