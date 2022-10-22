@@ -16,31 +16,35 @@ img {
 .login {
     font-family: 'Roboto',sans-serif;
 }
+
 #login__link { 
     margin-right: 10px;
 }
 .homepage__outside {
     margin: 5% 10%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 .homepage__inside {
-    padding: 10px;
+    padding: 5px;
+}
+.homepage__inside.left {
+    text-align: right;
 }
 .homepage__auth {
-    float:right;
-    
+    text-align:right;
 }
 .homepage__auth > a{
     text-decoration: none;
     color: brown;
 }
 
-#library {
+#cover {
     display: block;
-    width: 400px;
+    width: 65%;
+    margin-right: auto;
     opacity: .9;
-    border-radius: 2px;
-    
+    border-radius: 5px;
 }
 
 
@@ -58,6 +62,12 @@ img {
 .main__logo { 
     display: flex;
     justify-content: space-between;
+}
+#header__img {
+    display: block;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 .header a {
@@ -239,4 +249,10 @@ input[type='file'] {
     .header {
         font-size: 12px;
     }
+}
+
+/* Footer */
+
+#portfolio_link {
+    text-decoration: none;
 }

@@ -152,6 +152,7 @@ module.exports = {
             $push: {myBookmarks: req.params.id}
           })
           console.log('Bookmark added')
+          res.redirect("/listing/getBookmarks")
         }
       } catch(err) {
         console.log(`Error happened at addBookmark: ${err}`)
