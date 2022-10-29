@@ -80,7 +80,9 @@ img {
 }
 .header a:hover {
     color: blue;
-    text-decoration: underline;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    outline: none;
 }
 
 .header__right {
@@ -120,6 +122,14 @@ img {
     color: 
 } */
 /* Profile header */
+
+#user__profile {
+    display: block;
+    width: fit-content;
+    /* text-transform: uppercase;
+    letter-spacing: 2.5px; */
+    
+}
 
 .user__header {
     width: 100%;
